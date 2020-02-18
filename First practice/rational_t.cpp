@@ -1,7 +1,7 @@
 // AUTOR: Daniel Dóniz García
 // FECHA: 17 feb 2020
 // EMAIL: alu0101217277@ull.edu.es
-// VERSION: 1.0
+// VERSION: 2.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 1
 
@@ -15,18 +15,18 @@ rational_t::rational_t(const int n, const int d){
 
 
 
-//Crear el destructor ~rational_t. Vacío porque no usamos la memoria dinámica.
-//rational_t::~rational_t();
+//El destructor ~rational_t. Vacío porque no usamos la memoria dinámica.
+rational_t::~rational_t(){}
 
 
 
-int rational_t::get_num() const{
+int rational_t::getNum() const{
   return num_;
 }
 
 
 
-int rational_t::get_den() const{
+int rational_t::getDen() const{
   return den_;
 }
 
@@ -46,12 +46,12 @@ void rational_t::set_den(const int d){
 
 
 double rational_t::value() const{ 
-  return double(get_num()) / get_den(); //Type cast.
+  return double(getNum()) / getDen(); //Type cast.
 }
 
 
 
-bool rational_t::is_equal(const rational_t& r, const double precision) const{ 
+bool rational_t::isEqual(const rational_t& r, const double precision) const{ 
   if (fabs(value() - r.value()) < precision) 
     return true;
   else 
@@ -60,7 +60,7 @@ bool rational_t::is_equal(const rational_t& r, const double precision) const{
 
 
 
-bool rational_t::is_greater(const rational_t& r, const double precision) const{ 
+bool rational_t::isGreater(const rational_t& r, const double precision) const{ 
   if ((value() - r.value()) > precision) 
     return true;
   else 
@@ -69,7 +69,7 @@ bool rational_t::is_greater(const rational_t& r, const double precision) const{
 
 
 
-bool rational_t::is_less(const rational_t& r, const double precision) const{ 
+bool rational_t::isLess(const rational_t& r, const double precision) const{ 
   if ((r.value() - value()) < precision) 
     return true;
   else 
@@ -78,7 +78,7 @@ bool rational_t::is_less(const rational_t& r, const double precision) const{
 
 
 
-bool rational_t::is_equal_zero(const rational_t& r, const double precision) const{ 
+bool rational_t::isEqualZero(const rational_t& r, const double precision) const{ 
   if (fabs(value()) < precision) 
     return true;
   else 
@@ -114,7 +114,7 @@ double rational_t::divide(const rational_t& r) const{
 
 // E/S
 void rational_t::write(ostream& os) const{
-  os << get_num() << "/" << get_den() << "=" << value() << endl;
+  os << getNum() << "/" << getDen() << "=" << value() << endl;
 }
 
 
@@ -124,5 +124,9 @@ void rational_t::read(istream& is){
   is >> num_;
   cout << "Denominador? ";
   is >> den_;
-  assert(den_ != 0);
+  if(den_ == 0){
+    cout << "Indeterminacion" << endl;
+    exit (EXIT_FAILURE);
+  }
+  //assert(den_ != 0);
 }
