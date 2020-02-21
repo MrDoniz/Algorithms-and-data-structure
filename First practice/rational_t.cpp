@@ -1,76 +1,137 @@
+// AUTOR: Daniel Dóniz García
+// FECHA: 17 feb 2020
+// EMAIL: alu0101217277@ull.edu.es
+// VERSION: 5.0
+// ASIGNATURA: Algoritmos y Estructuras de Datos
+// PRÁCTICA Nº: 1
+
 #include "rational_t.hpp"
-#include <cmath>
-//Constructor
-rational_t::rational_t(const int n, const int d)
-{ assert(d != 0);
+
+// Crear el constructor por defecto rational_t.
+rational_t::rational_t(const int n, const int d){
+  //assert(d != 0);
   num_ = n, den_ = d;
 }
-//Funcion value que te devuelve el valor del numero racional
-double rational_t::value() const
-{ return double(get_num()) / get_den();
-}
-//Funcion que te da el opusto del racional
-rational_t rational_t::opposite() const
-{ return rational_t((-1)*get_num(), get_den());
-}
-//Funcion reciproca de rational
-rational_t rational_t::reciprocal() const
-{ return rational_t(get_den(), get_num());
+
+
+
+//El destructor ~rational_t. Vacío porque no usamos la memoria dinámica.
+rational_t::~rational_t(){}
+
+
+
+int rational_t::getNum() const{
+  return num_;
 }
 
-//FASE II
-//Funcion que te dice si a y b son iguales
-bool rational_t::equal(const rational_t& r,const double precision) const
-  {
-    return(fabs(value()-r.value()) < precision);
-}
-//Funcion que te dice si a es mayor que b
-bool rational_t::greater(const rational_t& r, const double precision) const
- {
-   return(fabs(value()-r.value())>precision);
-     cout<<value()<<" es mayor que "<<r.value()<<endl;
- }
-//Funcion que te dice si a es menor que b
-bool rational_t::less(const rational_t& r, const double precision) const
- {
-   return(fabs(r.value()-value()) > precision);
- }
-//FASE III
-//Suma
- rational_t rational_t::add(const rational_t& r)
- {
-   rational_t suma((get_num()*r.get_den() + r.get_num()*get_den()),(get_den()*r.get_den()));
-   return(suma);
- }
-//Resta
-rational_t rational_t::substract(const rational_t& r)
- {
-   return add(r.opposite());
- }
-//Multiplicación
- rational_t rational_t::multiply(const rational_t& r)
- {
-  rational_t mult(get_num()*r.get_num(),get_den()*r.get_den());
-  return(mult);
- }
-//División
- rational_t rational_t::divide(const rational_t& r)
- {
-   return multiply(r.reciprocal());
- }
-//Modificiacion
-bool rational_t::numeropar(void){
-return(get_den()%2 == 0);
-  }
 
-void rational_t::write(ostream& os) const
-{ os << get_num() << "/" << get_den() << "=" << value() << endl;
+
+int rational_t::getDen() const{
+  return den_;
 }
 
-void rational_t::read(istream& is)
-{ cout << "Numerador: ";
+
+  
+void rational_t::setNum(const int n){
+  num_ = n;
+}
+
+
+
+void rational_t::setDen(const int d){
+  assert(d != 0);
+  den_ = d;
+}
+
+
+//Devuelve el valor de la fracción.
+double rational_t::value() const{ 
+  return double(getNum()) / getDen(); //Type cast.
+}
+
+
+
+bool rational_t::isEqual(const rational_t& r, const double precision) const{ 
+  if (fabs(value() - r.value()) < precision) 
+    return true;
+  else 
+    return false;
+}
+
+
+
+bool rational_t::isGreater(const rational_t& r, const double precision) const{ 
+  if ((value() - r.value()) > precision) 
+    return true;
+  else 
+    return false;
+}
+
+
+
+bool rational_t::isLess(const rational_t& r, const double precision) const{ 
+  if ((r.value() - value()) < precision) 
+    return true;
+  else 
+    return false;
+}
+
+
+
+bool rational_t::isEqualZero(const rational_t& r, const double precision) const{ 
+  if (fabs(value()) < precision) 
+    return true;
+  else 
+    return false;
+}
+
+
+
+//Operaciones
+rational_t rational_t::add(const rational_t& r){
+  rational_t add((getNum()*r.getDen() + r.getNum()*getDen()),(getDen()*r.getDen()));
+  return(add);
+}
+
+
+
+rational_t rational_t::substract(const rational_t& r){
+  rational_t substract((getNum()*r.getDen() - r.getNum()*getDen()),(getDen()*r.getDen()));
+  return(substract);
+}
+
+
+
+rational_t rational_t::multiply(const rational_t& r){
+  rational_t multiply(getNum()*r.getNum(),getDen()*r.getDen());
+  return(multiply);
+}
+
+
+
+rational_t rational_t::divide(const rational_t& r){
+  rational_t divide(getNum()*r.getDen(),getDen()*r.getNum());
+  return(divide);
+}
+
+
+
+// E/S
+// Imprime la fracción y el resultado.
+void rational_t::write(ostream& os) const{
+  os << getNum() << "/" << getDen() << "=" << value() << endl;
+}
+
+
+
+void rational_t::read(istream& is){
+  cout << "Numerador? ";
   is >> num_;
-  cout << "Denominador: ";
+  cout << "Denominador? ";
   is >> den_;
-  assert(den_ != 0);
+  if(den_ == 0){
+    cout << "Indeterminacion" << endl;
+    exit (EXIT_FAILURE);
+  }
+  //assert(den_ != 0);
 }

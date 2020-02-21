@@ -1,49 +1,57 @@
+// AUTOR: Daniel Dóniz García
+// FECHA: 17 feb 2020
+// EMAIL: alu0101217277@ull.edu.es
+// VERSION: 5.0
+// ASIGNATURA: Algoritmos y Estructuras de Datos
+// PRÁCTICA Nº: 1
+
 #pragma once
 
-//Librerías
 #include <iostream>
 #include <cassert>
 #include <cmath>
+#include <stdlib.h> //Librería necesaria para usar la función exit, utilizada en la indeterminación.
 
 # define EPSILON 1e-6
 
 using namespace std;
-//Definición de la clase "rational"
-class rational_t
-{
-  int num_, den_;
 
-public:
-  rational_t(const int = 0, const int = 1);
-  ~rational_t() {}
+class rational_t {
+  public:
+    //Methods
+    
+    //Constructor por defecto.
+    rational_t(const int = 0, const int = 1);
+    //Destructor.
+    ~rational_t();
+    
+    //Getters.
+    int getNum() const;
+    int getDen() const;
+    //Setters.
+    void setNum(const int);
+    void setDen(const int);
+    
+    double value(void) const;
 
-  int get_num() const
-  { return num_; }
+    // FASE II
+    bool isEqual(const rational_t&, const double precision = EPSILON) const;
+    bool isGreater(const rational_t&, const double precision = EPSILON) const;
+    bool isLess(const rational_t&, const double precision = EPSILON) const;
+    bool isEqualZero(const rational_t&, const double precision = EPSILON) const;
 
-  int get_den() const
-  { return den_; }
-
-  void set_num(const int n)
-  { num_ = n; }
-
-  void set_den(const int d)
-  { assert(d != 0), den_ = d; }
-
-  double value(void) const;
-  rational_t opposite(void) const;
-  rational_t reciprocal(void) const;
-
-  // FASE II
-   bool equal(const rational_t& r, const double precision = EPSILON) const;
-   bool greater(const rational_t& r, const double precision = EPSILON) const;
-   bool less(const rational_t& r, const double precision = EPSILON) const;
-
-  // FASE IV
-   rational_t add(const rational_t&);
-   rational_t substract(const rational_t&);
-   rational_t multiply(const rational_t&);
-   rational_t divide(const rational_t&);
-bool numeropar(void);
-  void write(ostream& os = cout) const;
-  void read(istream& is = cin);
+    // FASE III
+    rational_t add(const rational_t&);
+    rational_t substract(const rational_t&);
+    rational_t multiply(const rational_t&);
+    rational_t divide(const rational_t&);
+    
+    
+    void write(ostream& = cout) const;
+    void read(istream& = cin);
+    
+  private:
+    //Attributes
+    int num_;
+    int den_;
 };
