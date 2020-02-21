@@ -10,7 +10,7 @@
 #include <iostream>
 #include <cassert>
 #include <cmath>
-#include <stdlib.h> //exit
+#include <stdlib.h> //Librería necesaria para usar la función exit, utilizada en la indeterminación.
 
 # define EPSILON 1e-6
 
@@ -29,8 +29,8 @@ class rational_t {
     int getNum() const;
     int getDen() const;
     //Setters.
-    void set_num(const int);
-    void set_den(const int);
+    void setNum(const int);
+    void setDen(const int);
     
     double value(void) const;
 
@@ -41,10 +41,10 @@ class rational_t {
     bool isEqualZero(const rational_t&, const double precision = EPSILON) const;
 
     // FASE III
-    double add(const rational_t&) const;
-    double substract(const rational_t&) const;
-    double multiply(const rational_t&) const;
-    double divide(const rational_t&) const;
+    rational_t add(const rational_t&);
+    rational_t substract(const rational_t&);
+    rational_t multiply(const rational_t&);
+    rational_t divide(const rational_t&);
     
     
     void write(ostream& = cout) const;

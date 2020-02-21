@@ -32,13 +32,13 @@ int rational_t::getDen() const{
 
 
   
-void rational_t::set_num(const int n){
+void rational_t::setNum(const int n){
   num_ = n;
 }
 
 
 
-void rational_t::set_den(const int d){
+void rational_t::setDen(const int d){
   assert(d != 0);
   den_ = d;
 }
@@ -88,26 +88,44 @@ bool rational_t::isEqualZero(const rational_t& r, const double precision) const{
 
 
 //Operaciones
-double rational_t::add(const rational_t& r) const{
-  return double (r.value() + value());
+rational_t rational_t::add(const rational_t& r){
+  int i = 1;
+  if(den_ == r.den_)  //Suma de numeradores cuando son comun los denominadores
+    num_ = num_ + r.num_;
+  else{
+    while((i % den_ != 0)|| (i % r.den_ != 0))  //i = mcm(den1,den2)
+      i++;
+    den_ = i;
+    num_ = (((i / den_) * num_)+((i / r.den_) * r.num_));
+  }
 }
 
 
 
-double rational_t::substract(const rational_t& r) const{
-  return double (r.value() - value());
+rational_t rational_t::substract(const rational_t& r){
+  int i = 1;
+  if(den_ == r.den_)  //Suma de numeradores cuando son comun los denominadores
+    num_ = num_ - r.num_;
+  else{
+    while((i % den_ != 0)|| (i % r.den_ != 0))  //i = mcm(den1,den2)
+      i++;
+    den_ = i;
+    num_ = (((i / den_) * num_)-((i / r.den_) * r.num_));
+  }
 }
 
 
 
-double rational_t::multiply(const rational_t& r) const{
-  return double (r.value() * value());
+rational_t rational_t::multiply(const rational_t& r){
+  num_ = num_*r.num_;
+  den_ = den_*r.den_;
 }
 
 
 
-double rational_t::divide(const rational_t& r) const{
-  return double (r.value() / value());
+rational_t rational_t::divide(const rational_t& r){
+  num_ = num_*r.den_;
+  den_ = den_*r.num_;
 }
 
 

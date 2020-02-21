@@ -5,6 +5,8 @@
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 1
 // COMPILACIÓN: clear; g++ -g rational_t.cpp main_rational_t.cpp -o main_rational_t
+// $ make
+// $ ./main
 
 #include <iostream>
 #include <cmath>
@@ -41,10 +43,17 @@ int main(){
   
   
   // FASE III
-  cout << "a + b: " << a.add(b) << endl;
-  cout << "a - b: " << a.substract(b) << endl;
-  cout << "a * b: " << a.multiply(b) << endl;
-  cout << "a / b: " << a.divide(b) << endl;
+  cout << "a + b: ";
+  a.add(b).write();
+  
+  cout << "b - a: ";
+  b.substract(a).write();
+
+  cout << "a * b: ";
+  a.multiply(b).write();
+  
+  cout << "a / b: ";
+  a.divide(b).write();
 
   return 0;
 }
