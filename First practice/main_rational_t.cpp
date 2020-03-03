@@ -6,7 +6,7 @@
 // PRÁCTICA Nº: 1
 // COMPILACIÓN 1: $ clear; g++ -g rational_t.cpp main_rational_t.cpp -o main_rational_t
 // COMPILACIÓN 2: $ make
-//                $ ./main
+//                                 $ ./main
 
 #include <iostream>
 #include <cmath>
@@ -15,7 +15,7 @@
 
 using namespace std;
 
-int main(){
+int main() {
   //Crea el objeto a, b y c. Con el constructor por defecto.
   rational_t a(1, 2), b(3), c;
 
@@ -39,7 +39,7 @@ int main(){
   cout << "x == y? " << (x.isEqual(y)  ? "true" : "false") << endl;
   cout << "x < y? " << (x.isGreater(y) ? "true" : "false") << endl;
   cout << "x > y? " << (x.isLess(y) ? "true" : "false") << endl;
-  cout << "x == 0? " << (x.isEqualZero(y) ? "true" : "false") << endl;
+  cout << "x == 0? " << (x.isEqualZero() ? "true" : "false") << endl;
   
   
   // FASE III
@@ -54,6 +54,12 @@ int main(){
   
   cout << "a / b: ";
   a.divide(b).write();
+  
+  //Modificacion
+  if (c.indeterminado() == true) 
+    cout << "Es indeterminado." << endl;
+  else 
+    cout << "No es indeterminado." << endl;
 
   return 0;
 }

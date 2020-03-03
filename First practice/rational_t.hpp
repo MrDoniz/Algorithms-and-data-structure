@@ -18,8 +18,6 @@ using namespace std;
 
 class rational_t {
   public:
-    //Methods
-    
     //Constructor por defecto.
     rational_t(const int = 0, const int = 1);
     //Destructor.
@@ -38,7 +36,7 @@ class rational_t {
     bool isEqual(const rational_t&, const double precision = EPSILON) const;
     bool isGreater(const rational_t&, const double precision = EPSILON) const;
     bool isLess(const rational_t&, const double precision = EPSILON) const;
-    bool isEqualZero(const rational_t&, const double precision = EPSILON) const;
+    bool isEqualZero(const double precision = EPSILON) const;
 
     // FASE III
     rational_t add(const rational_t&);
@@ -46,7 +44,10 @@ class rational_t {
     rational_t multiply(const rational_t&);
     rational_t divide(const rational_t&);
     
+    //Modificacion
+    bool indeterminado(void) const;
     
+    //E/S
     void write(ostream& = cout) const;
     void read(istream& = cin);
     
