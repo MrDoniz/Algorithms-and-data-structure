@@ -180,6 +180,6 @@ T scal_prod(const vector_t<T>& v, const vector_t<T>& w) {
 double scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
   rational_t scal_prod;
   for (int i = 0; i < v.get_size(); i++)
-    scal_prod = scal_prod + v[i] * w[i];
-  return scal_prod;
+    scal_prod = scal_prod.add(v[i].multiply(w[i]));
+  return scal_prod.value();
 }
