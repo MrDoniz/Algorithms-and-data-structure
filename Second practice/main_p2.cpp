@@ -1,20 +1,15 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Daniel Dóniz García
+// FECHA: 8 mar 2020
+// EMAIL: alu0101217277@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
-// COMENTARIOS: se indican entre [] las pautas de estilo aplicadas de
-//              "C++ Programming Style Guidelines"
-//              https://geosoft.no/development/cppstyle.html
-// COMPILACIÓN: g++ -g rational_t.cpp main_p2.cpp -o main_p2
-
-// pauta de estilo [92]: comentarios multilínea usando solo "//"
+// COMPILACIÓN: $ g++ -g rational_t.cpp main_p2.cpp -o main
+//              $ ./main < data.txt
 
 #include <iostream>
 #include <cmath>
 
-// pauta de estilo [41]: ficheros de cabecera agrupados y separados
 #include "rational_t.hpp"
 
 #include "vector_t.hpp"
@@ -23,9 +18,8 @@
 
 using namespace std;
 
-int main()
-{
-  rational_t a(1, 2), b(3);
+int main() {
+  rational_t a(1, 2),  b(3);
 
   // FASE I
   cout << "a + b: ";
