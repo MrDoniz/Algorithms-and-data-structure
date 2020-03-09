@@ -7,56 +7,52 @@
 
 #include "rational_t.hpp"
 
-rational_t::rational_t(const int n, const int d)
-{
+rational_t::rational_t(const int n, const int d){
   assert(d != 0);
   num_ = n, den_ = d;
 }
 
 
 
-inline
-int rational_t::get_num() const {
+inline int rational_t::getNum() const {
   return num_;
 }
 
 
 
-inline
-int rational_t::get_den() const {
+inline int rational_t::getDen() const {
   return den_;
 }
 
 
   
-void rational_t::set_num(const int n) {
+void rational_t::setNum(const int n) {
   num_ = n;
 }
 
 
   
-void rational_t::set_den(const int d) {
+void rational_t::setDen(const int d) {
   assert(d != 0);
   den_ = d;
 }
 
 
 
-inline
-double rational_t::value() const { 
-  return double(get_num()) / get_den();
+inline double rational_t::value() const { 
+  return double(getNum()) / getDen();
 }
 
 
 
 rational_t rational_t::opposite() const { 
-  return rational_t((-1)*get_num(), get_den());
+  return rational_t((-1)*getNum(), getDen());
 }
 
 
 
 rational_t rational_t::reciprocal() const { 
-  return rational_t(get_den(), get_num());
+  return rational_t(getDen(), getNum());
 }
 
 
@@ -81,7 +77,7 @@ bool rational_t::is_less(const rational_t& r, const double precision) const {
 
 // operaciones
 rational_t rational_t::add(const rational_t& r) const {
-  return rational_t(get_num() * r.get_den() + get_den() * r.get_num(), get_den() * r.get_den());
+  return rational_t(getNum() * r.getDen() + getDen() * r.getNum(), getDen() * r.getDen());
 }
 
 
@@ -93,7 +89,7 @@ rational_t rational_t::substract(const rational_t& r) const {
 
 
 rational_t rational_t::multiply(const rational_t& r) const {
-  return rational_t(get_num() * r.get_num(), get_den() * r.get_den());
+  return rational_t(getNum() * r.getNum(), getDen() * r.getDen());
 }
 
 
@@ -134,7 +130,7 @@ rational_t operator/(const rational_t& a, const rational_t& b) {
 
 // E/S
 void rational_t::write(ostream& os) const {
-  os << get_num() << "/" << get_den() << "=" << value() << endl;
+  os << getNum() << "/" << getDen() << "=" << value() << endl;
 }
 
 

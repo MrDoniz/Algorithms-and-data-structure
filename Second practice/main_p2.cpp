@@ -4,8 +4,8 @@
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
-// COMPILACIÓN: $ g++ -g rational_t.cpp main_p2.cpp -o main
-//              $ ./main < data.txt
+// COMPILACIÓN: $ g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// EJECUCIÓN:        $ ./main_p2 < data.txt
 
 #include <iostream>
 #include <cmath>
@@ -41,13 +41,13 @@ int main() {
   v.read(), v.write();
   w.read(), w.write();
   
-  cout << "Producto escalar de vector_t<double>: " << scal_prod(v, w) << endl << endl;
+  cout << "Producto escalar de vector_t<double>: " << scalProd(v, w) << endl << endl;
   
   vector_t<rational_t> x, y;
   x.read(), x.write();
   y.read(), y.write();
   
-  cout << "Producto escalar de vector_t<rational_t>: " << scal_prod(x, y) << endl << endl;
+  cout << "Producto escalar de vector_t<rational_t>: " << scalProd(x, y) << endl << endl;
   
   
   // FASE III
