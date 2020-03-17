@@ -4,6 +4,10 @@
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
+// COMPILACIÓN: $ clear; g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// COMPILACIÓN: $ make
+// EJECUCIÓN:        $ ./main_p2 < data.txt
+//GUÍA DE ESTILO DE GOOGLE: https://google.github.io/styleguide/cppguide.html
 
 #pragma once
 

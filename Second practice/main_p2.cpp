@@ -4,8 +4,10 @@
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
-// COMPILACIÓN: $ g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// COMPILACIÓN: $ clear; g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// COMPILACIÓN: $ make
 // EJECUCIÓN:        $ ./main_p2 < data.txt
+// GUÍA DE ESTILO DE GOOGLE: https://google.github.io/styleguide/cppguide.html
 
 #include <iostream>
 #include <cmath>
@@ -19,7 +21,7 @@
 using namespace std;
 
 int main() {
-  rational_t a(1, 2),  b(3);
+  rational_t a(1, 2), b(3);
 
   // FASE I
   cout << "a + b: ";

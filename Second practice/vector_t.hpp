@@ -4,6 +4,10 @@
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
+// COMPILACIÓN: $ clear; g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// COMPILACIÓN: $ make
+// EJECUCIÓN:        $ ./main_p2 < data.txt
+//GUÍA DE ESTILO DE GOOGLE: https://google.github.io/styleguide/cppguide.html
 
 #pragma once
 
@@ -30,7 +34,7 @@ template<class T> class vector_t {
     T& at(const int);
     T& operator[](const int);
     
-    // Getters constantes
+    // Getters constantes, solo pueden invocar otros metodos const.
     const T& at(const int) const;
     const T& operator[](const int) const;
 
@@ -153,7 +157,9 @@ template<class T> void vector_t<T>::read(istream& is) {
 
 
 // FASE II: producto escalar
+// Solo para scalProd de T
 template<class T> T scalProd(const vector_t<T>& v, const vector_t<T>& w) {
+  assert (v.getSize() == w.getSize());
   double scalProd = 0;
   for (int i = 0; i < v.getSize(); i++)
     scalProd = scalProd + v[i] * w[i];
@@ -161,10 +167,16 @@ template<class T> T scalProd(const vector_t<T>& v, const vector_t<T>& w) {
 }
 
 
-
+// Solo para scalProd de rational_t
 double scalProd(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
-  rational_t scalProd;
+  assert (v.getSize() == w.getSize());
+  double scalProd = 0;
   for (int i = 0; i < v.getSize(); i++)
-    scalProd = scalProd.add(v[i].multiply(w[i]));
-  return scalProd.value();
+    scalProd = scalProd + (v[i] * w[i]).value();
+  return scalProd;
+  // rational_t scalProd;
+  // for (int i = 0; i < v.getSize(); i++)
+    // scalProd = scalProd + (v[i] * w[i]);
+  // scalProd.write();
+  // return scalProd.value();
 }

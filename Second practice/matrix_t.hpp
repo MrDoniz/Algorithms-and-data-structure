@@ -4,6 +4,10 @@
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
+// COMPILACIÓN: $ clear; g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// COMPILACIÓN: $ make
+// EJECUCIÓN:        $ ./main_p2 < data.txt
+//GUÍA DE ESTILO DE GOOGLE: https://google.github.io/styleguide/cppguide.html
 
 #pragma once
 
@@ -80,7 +84,7 @@ template<class T> inline int matrix_t<T>::getN() const {
 }
 
 
-
+//Comprobar si las filas y columnas están dentro del rango.
 template<class T> T& matrix_t<T>::at(const int i, const int j) {
   assert(i > 0 && i <= getM());
   assert(j > 0 && j <= getN());
@@ -88,7 +92,7 @@ template<class T> T& matrix_t<T>::at(const int i, const int j) {
 }
 
 
-
+//Get-Set
 template<class T> T& matrix_t<T>::operator()(const int i, const int j) {
   return at(i, j);
 }

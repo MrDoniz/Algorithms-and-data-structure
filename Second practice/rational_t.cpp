@@ -4,6 +4,10 @@
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 2
+// COMPILACIÓN: $ clear; g++ -g rational_t.cpp main_p2.cpp -o main_p2
+// COMPILACIÓN: $ make
+// EJECUCIÓN:        $ ./main_p2 < data.txt
+//GUÍA DE ESTILO DE GOOGLE: https://google.github.io/styleguide/cppguide.html
 
 #include "rational_t.hpp"
 
@@ -58,20 +62,20 @@ rational_t rational_t::reciprocal() const {
 
 
 // comparaciones
-bool rational_t::is_equal(const rational_t& r, const double precision) const { 
+bool rational_t::isEqual(const rational_t& r, const double precision) const { 
   return fabs(value() - r.value()) < precision;
 }
 
 
 
-bool rational_t::is_greater(const rational_t& r, const double precision) const{
+bool rational_t::isGreater(const rational_t& r, const double precision) const{
   return (value() - r.value()) > precision;
 }
 
 
 
-bool rational_t::is_less(const rational_t& r, const double precision) const {
-  return r.is_greater(*this, precision);
+bool rational_t::isLess(const rational_t& r, const double precision) const {
+  return r.isGreater(*this, precision);
 }
 
 
@@ -101,29 +105,25 @@ rational_t rational_t::divide(const rational_t& r) const {
 
 // FASE I: operadores
 rational_t operator+(const rational_t& a, const rational_t& b) {
-  rational_t c(a.add(b));
-  return c;
+  return a.add(b);
 }
 
 
 
 rational_t operator-(const rational_t& a, const rational_t& b) {
-  rational_t c(a.substract(b));
-  return c;
+  return b.substract(a);
 }
 
 
 
 rational_t operator*(const rational_t& a, const rational_t& b) {
-  rational_t c(a.multiply(b));
-  return c;
+  return a.multiply(b);
 }
 
 
 
 rational_t operator/(const rational_t& a, const rational_t& b) {
-  rational_t c(a.divide(b));
-  return c;
+  return a.divide(b);
 }
 
 
