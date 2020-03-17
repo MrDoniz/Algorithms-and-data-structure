@@ -149,11 +149,11 @@ template<class T> void matrix_t<T>::multiply(const matrix_t<T>& A, const matrix_
   
   for(int i = 1; i <= m_; i++)
     for(int j = 1; j <= n_; j++){
-			T aux;
-			for(int k = 1; k <= A.getN(); k++){
-				aux = aux + (A.at(i, k) * B.at(k, j));
-				at(i, j) = aux;
+      T aux;
+      for(int k = 1; k <= A.getN(); k++){
+        aux = aux + (A.at(i, k) * B.at(k, j));
+        at(i, j) = aux;
       }
       aux = 0;
-		}
+    }
 }
