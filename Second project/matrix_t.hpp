@@ -6,7 +6,7 @@
 // PRÁCTICA Nº: 2
 // COMPILACIÓN: $ clear; g++ -g rational_t.cpp main_p2.cpp -o main_p2
 // COMPILACIÓN: $ make
-// EJECUCIÓN:        $ ./main_p2 < data.txt
+// EJECUCIÓN:   $ ./main_p2 < data.txt
 //GUÍA DE ESTILO DE GOOGLE: https://google.github.io/styleguide/cppguide.html
 
 #pragma once
@@ -39,6 +39,9 @@ template<class T> class matrix_t {
     
     // Operaciones y operadores
     void multiply(const matrix_t<T>&, const matrix_t<T>&);
+    
+    //Modificación
+	  void inferior_diagonal(void);
 
     void write(ostream& = cout) const;
     void read(istream& = cin);
@@ -151,9 +154,20 @@ template<class T> void matrix_t<T>::multiply(const matrix_t<T>& A, const matrix_
   for(int i = 1; i <= m_; i++)
     for(int j = 1; j <= n_; j++){
       for(int k = 1; k <= A.getN(); k++){
-        aux = aux + (A.at(i, k) * B.at(k, j));
+        aux = aux + A(i, k) * B(k, j);
         at(i, j) = aux;
       }
       aux = 0;
     }
+}
+
+
+//Modificación
+template <class T> void matrix_t<T>::inferior_diagonal(void){
+  assert(getN() == getM());
+  for(int i = 1; i <= m_; i++){
+    for(int j = 1; j <= i; j++)
+      cout << at(i, j) << " ";
+	cout << endl;
+  }
 }

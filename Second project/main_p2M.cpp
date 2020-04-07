@@ -6,7 +6,7 @@
 // PRÁCTICA Nº: 2
 // COMPILACIÓN: $ clear; g++ -g rational_t.cpp main_p2.cpp -o main_p2
 // COMPILACIÓN: $ make
-// EJECUCIÓN:        $ ./main_p2 < data.txt
+// EJECUCIÓN:   $ ./main_p2M < dataM.txt
 // GUÍA DE ESTILO DE GOOGLE: https://google.github.io/styleguide/cppguide.html
 
 #include <iostream>
@@ -57,9 +57,14 @@ int main() {
   A.read(), A.write();
   B.read(), B.write();
   
+  //Modificación.
+  A.inferior_diagonal();
+  
   C.multiply(A, B);
   cout << "Multiplicación de matrices A y B: " << endl;
   C.write();
+  
+  
   
   return 0;
 }

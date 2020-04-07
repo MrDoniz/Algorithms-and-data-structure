@@ -1,0 +1,65 @@
+##############################################################################################################################
+Desarrolla un método de la clase matrix_t que muestre por pantalla su submatriz diagonal inferior. Su cabecera debe ser:
+template <class T> void matrix_t<T>::inferior_diagonal(void);
+
+
+A.inferior_diagonal();
+
+template <class T> void matrix_t<T>::inferiordiagonal(void){
+  assert(getN() == getM());
+  for(int i = 1; i <= m; i++){
+    for(int j = 1; j <= i; j++)
+      cout << at(i, j) << " ";
+    cout << endl;
+  }
+}
+
+
+##############################################################################################################################
+Desarrolla una función (externa a la clase vector_t) que devuelva el menor valor de un vector de números racionales. Su cabecera debe ser:
+rational_t min(const vector_t<rational_t>&);
+
+// Código añadido en el main_p2.cpp
+cout << "El menor valor del vector de racionales x es: " << min(x) << endl << endl;
+
+
+// El método en el vector_t.hpp
+rational_t
+min(const vector_t<rational_t>& v){
+
+  double min = INFINITY;
+  int j = 0;
+
+  for (int i = 0; i < v.get_size(); i++ ){
+    if (v[i].value() < min) {
+      min = v[i].value();
+      j = i;
+    }
+  }
+  return v[j];
+}
+
+
+
+
+##############################################################################################################################
+Desarrolla un método de la clase matrix_t que devuelva la suma de dos matrices (siendo uno de los operandos la matriz invocante). Su cabecera debe ser:
+template <class T> matrix_t<T> matrix_t<T>::add(const matrix_t<T>&);
+
+//main_p2.cpp
+(A.add(B)).write();
+
+//matrix_t.hpp
+// clase// matrix_t<T> add(const matrix_t<T>&);
+template<class T> matrix_t<T> matrix_t<T>::add(const matrix_t<T>& B)
+{
+  matrixt<double> D;
+  D.resize(m, n_);
+  assert(get_n() == B.get_n());
+  assert(get_m() == B.getm());
+  for(int i = 1; i <= m; i++)
+    for(int j = 1; j <= n_; j++)
+      D(i, j) = at(i, j) + B(i, j);
+  return D;
+}
+
