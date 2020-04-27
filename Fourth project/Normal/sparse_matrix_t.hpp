@@ -59,8 +59,7 @@ sparse_matrix_t::sparse_matrix_t(const matrix_t<double>& M, bool conf):
 sm_(),
 m_(M.get_m()),
 n_(M.get_n()),
-by_rows_(conf)
-{
+by_rows_(conf){
   if (by_rows_) {
     sm_.resize(m_);
     for (int i = 1; i <= M.get_m(); ++i) {
@@ -69,8 +68,11 @@ by_rows_(conf)
     }
   }
   else {
-    // FASE I
-    // configuración por columnas
+    sm_.resize(n_);
+    for (int i = 1; i <= M.get_n(); ++i) {
+      sparse_vector_t sv(M.get_col(i));
+      sm_[i - 1] = sv;
+    }
   }
 }
 
@@ -125,8 +127,10 @@ sparse_matrix_t::multiply(const matrix_t<double>& A, matrix_t<double>& B)
 {
   assert(by_rows_); // solo se multiplica si la configuración es por filas
   assert(get_n() == A.get_m());
-
-  // código aquí
+  B.resize(sm_.get_size(), A.get_n());
+  for(int i = 1; i <= sm_.get_size(); ++i)
+    for(int j = 1; j <= A.get_n(); ++j)
+      B(i,j) = sm_.get_val(i-1).scal_prod(A,j);
 }
 
 

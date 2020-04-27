@@ -26,6 +26,7 @@ using namespace std;
 
 int main()
 {
+  std::freopen("../data_sparse_matrix_t.txt","r",stdin);
   AED::vector_t<double> v1;
   cin >> v1;
   cout << "v1= " << v1;
@@ -58,6 +59,11 @@ int main()
   SM2.multiply(M1, M3);
   cout << "M3 = SM2 * M1" << endl;
   cout << M3;
+  
+  // Modificación
+  AED::vector_t<double> v2;
+  sv1.add(M2, 1, v2);
+  cout << "sv1 + M2(1, ·)= " << v2;
   
   return 0;
 }

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Normal"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Normal">
+				<Option output="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Normal.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/."/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 Normal"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Normal/fast">
+				<Option output="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Normal.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/."/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/include-fixed"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/6.3.0/../../../../mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 Normal/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_node_t.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_t.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/main_sparse_matrix_t.cpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/matrix_t.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/pair_t.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/sparse_matrix_t.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/sparse_vector_t.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/vector_t.hpp">
+			<Option target="Normal"/>
+		</Unit>
+		<Unit filename="E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

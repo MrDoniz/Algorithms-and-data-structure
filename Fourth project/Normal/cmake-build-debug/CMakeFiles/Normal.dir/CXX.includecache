@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_node_t.hpp
+cassert
+-
+iostream
+-
+cstdio
+-
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_t.hpp
+cassert
+-
+iostream
+-
+cstdio
+-
+dll_node_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_node_t.hpp
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/main_sparse_matrix_t.cpp
+iostream
+-
+cmath
+-
+vector_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/vector_t.hpp
+matrix_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/matrix_t.hpp
+sparse_vector_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/sparse_vector_t.hpp
+sparse_matrix_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/sparse_matrix_t.hpp
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/matrix_t.hpp
+iostream
+-
+cassert
+-
+vector_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/vector_t.hpp
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/pair_t.hpp
+iostream
+-
+cassert
+-
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/sparse_matrix_t.hpp
+iostream
+-
+cassert
+-
+pair_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/pair_t.hpp
+dll_node_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_node_t.hpp
+dll_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_t.hpp
+sparse_vector_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/sparse_vector_t.hpp
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/sparse_vector_t.hpp
+iostream
+-
+cassert
+-
+pair_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/pair_t.hpp
+dll_node_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_node_t.hpp
+dll_t.hpp
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/dll_t.hpp
+
+E:/Dropbox/Algorithms-and-data-structure/Fourth project/Normal/vector_t.hpp
+iostream
+-
+cassert
+-
+

@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Modificacion.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\Modificacion.dir/objects.a @CMakeFiles\Modificacion.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Modificacion.dir/objects.a -Wl,--no-whole-archive  -o Modificacion.exe -Wl,--out-implib,libModificacion.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Modificacion.dir\linklibs.rsp

@@ -50,13 +50,15 @@ public:
    double scal_prod(const sparse_vector_t&);
    double scal_prod(const matrix_t<double>&, int);
    
+   void add(const matrix_t<double>&, int, vector_t<double>&);
+   
    // E/S
    void write(ostream& = cout) const;
 
 private:
-  dll_pair_t lp_; // valores + índices
-  int     nz_;    // nº de valores distintos de cero = tamaño del vector
-  int     n_;     // tamaño del vector original
+  dll_pair_t lp_;    // valores + índices
+  int        nz_;    // nº de valores distintos de cero = tamaño del vector
+  int         n_;    // tamaño del vector original
 };
 
 
@@ -131,6 +133,7 @@ sparse_vector_t::get_n() const
 
 
 
+
 // operaciones
 double
 sparse_vector_t::scal_prod(const vector_t<double>& v)
@@ -175,8 +178,22 @@ sparse_vector_t::scal_prod(const matrix_t<double>& M, int j)
 {
   assert(get_n() == M.get_m());
   double s = 0;
-  // código aquí
+  s = scal_prod(M.get_col(j));
   return s;
+}
+
+
+// Modificación
+void sparse_vector_t::add(const matrix_t<double>& M1, int i, vector_t<double>& v2)
+{
+  assert(M1.get_row(i).get_size() == get_n());
+  v2.resize(get_n());
+  
+  dll_node_pair_t* aux = lp_.get_head();
+  while (aux != NULL){
+    v2[aux -> get_data().get_inx()] = aux -> get_data().get_val() + M1.get_row(i)[aux -> get_data().get_inx()];
+    aux = aux -> get_next();
+  }
 }
 
 

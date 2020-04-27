@@ -1,0 +1,86 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/dll_node_t.hpp
+cassert
+-
+iostream
+-
+cstdio
+-
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/dll_t.hpp
+cassert
+-
+iostream
+-
+cstdio
+-
+dll_node_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/dll_node_t.hpp
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/main_sparse_matrix_t.cpp
+iostream
+-
+cmath
+-
+vector_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/vector_t.hpp
+matrix_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/matrix_t.hpp
+sparse_vector_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/sparse_vector_t.hpp
+sparse_matrix_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/sparse_matrix_t.hpp
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/matrix_t.hpp
+iostream
+-
+cassert
+-
+vector_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/vector_t.hpp
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/pair_t.hpp
+iostream
+-
+cassert
+-
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/sparse_matrix_t.hpp
+iostream
+-
+cassert
+-
+pair_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/pair_t.hpp
+dll_node_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/dll_node_t.hpp
+dll_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/dll_t.hpp
+sparse_vector_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/sparse_vector_t.hpp
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/sparse_vector_t.hpp
+iostream
+-
+cassert
+-
+pair_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/pair_t.hpp
+dll_node_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/dll_node_t.hpp
+dll_t.hpp
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/dll_t.hpp
+
+D:/Dropbox/Algorithms-and-data-structure/Fourth project/Modificacion/vector_t.hpp
+iostream
+-
+cassert
+-
+
