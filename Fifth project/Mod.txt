@@ -1,0 +1,22 @@
+1 Desarrollar un método privado de la clase rpn_t que devuelva el resultado de operar dos operandos 'a' y 'b' con el operador que se pasa por el parámetro c (alguno de '+', '-', '*', '/', '^', 'r', 'l', 'c'). Su cabecera debe ser:
+template<class T> int rpn_t<T>::opera_(const char c, int a, int b = 0);
+
+2 Desarrollar un método privado de la clase queue_l_t que devuelva la suma de las elementos pares que contiene la cola. Su cabecera debe ser: template<class T> int queue_l_t<T>::suma_even_(void) const;
+
+3 Desarrollar un método privado de la clase stack_l_t que devuelva el número de que elementos que contiene la pila cuando es invocado. Su cabecera debe ser: template<class T> int stack_l_t<T>::count_(void) const;
+
+4 Desarrollar un método privado de la clase stack_l_t que devuelva la suma de los elementos impares que contiene la pila cuando es invocado. Su cabecera debe ser: template<class T> int stack_l_t<T>::sum_pair_(void) const;
+
+5 Desarrollar un método privado de la clase queue_l_t que devuelva la suma de los elementos impares que contiene la cola. Su cabecera debe ser: template<class T> int queue_l_t<T>::sum_pair_(void) const;
+
+6 Desarrollar un método privado de la clase queue_l_t que devuelva la suma de las elementos que contiene la cola. Su cabecera debe ser: template<class T> int queue_l_t<T>::suma_(void) const;
+
+7 Desarrollar un método privado de la clase queue_l_t que devuelva el número elementos pares que contiene la cola. Su cabecera debe ser: template<class T> int queue_l_t<T>::count_even_(void) const;
+
+8 Enriquece el conjunto de operaciones admitidas con el operador binario '>' que calcula el mayor de dos operandos, por ejemplo, el resultado de la operación 3>1 es el mayor de ambos, es decir 3. Enviar el método operate_ resultante.
+
+9 Enriquecer el conjunto de operaciones admitidas con el operador binario '%' que calcula el tanto por ciento, por ejemplo, el resultado de la operación 30 % 10 es el cálculo del 10% de 30, es decir 3. Enviar el método operate_ resultante.
+
+10 Enriquecer el conjunto de operaciones admitidas con el operador binario '<' que calcula el menor de dos operandos, por ejemplo, el resultado de la operación 3 < 1 es el menor de ambos, es decir 1. Enviar el método operate_ resultante.
+
+11 Desarrollar un método privado de la clase queue_l_t que devuelva el número de elementos impares que contiene la cola. Su cabecera debe ser: template<class T> int queue_l_t<T>::count_odd_(void) const;
