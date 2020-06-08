@@ -1,0 +1,15 @@
+1 Utilizar una matriz auxiliar del mismo tamaño que la matriz del laberinto, que esté inicialmente rellena de ceros. El procedimiento solve_ debe poner un 1 en aquellas posiciones en las que se vuelve atrás. Incluir en el cuestionario el código que se ha modificado.
+
+2 Establecer como entrada del laberinto la esquina superior derecha, y como salida la esquina inferior izquierda. Convertir la entrada y la salida original del laberinto en muro. Incluir en el cuestionario el código que se ha modificado.
+
+3 Llevar una cuenta de las llamadas recursivas que efectúa el procedimiento solve_(). Mostrar el resultado de la cuenta al final de la ejecución del procedimiento solve(). Incluir en el cuestionario el código que se ha modificado.
+
+4 Implementar un método de la clase maze_t que devuelva el número celdas muro del laberinto. Incluir en el cuestionario el código que se ha modificado.
+
+5 Establecer como entrada del laberinto el elemento central de la columna izquierda, y como salida el elemento central de la columna derecha. Convertir la entrada y la salida original del laberinto en muro. Incluir en el cuestionario el código que se ha modificado.
+
+6 Establecer como entrada del laberinto el elemento central de la fila superior, y como salida el elemento central de la fila inferior. Convertir la entrada y la salida original del laberinto en muro. Incluir en el cuestionario el código que se ha modificado.
+
+7 Llevar una cuenta de los retrocesos que efectúa el procedimiento solve_(). Mostrar el resultado de la cuenta al final de la ejecución del procedimiento solve(). Incluir en el cuestionario el código que se ha modificado.
+
+8 Modificar el código para que se pueda avanzar en diagonal. Es decir, utilizando los movimientos NE, NW, SE y SW. Incluir en el cuestionario el código que se ha modificado.

@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Daniel Dóniz García
+// FECHA: 2 abr 2020
+// EMAIL: alu0101217277@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 6
@@ -9,14 +9,15 @@
 //              https://geosoft.no/development/cppstyle.html
 
 #include "maze_t.hpp"
-
+//Modificación
+matrix_t<bool> aux_;
 
 // constructor
 maze_t::maze_t():
 matrix_(),
-visited_(), 
+visited_(),
 i_start_(-1),
-j_start_(-1), 
+j_start_(-1),
 i_end_(-1),
 j_end_(-1)
 {}
@@ -32,7 +33,10 @@ maze_t::~maze_t()
 bool
 maze_t::solve()
 {
-  return solve_(i_start_, j_start_);
+  //Modificación
+  bool aux = solve_(i_start_, j_start_);
+  cout << aux_ << endl;
+  return aux;
 }
 
 
@@ -40,21 +44,24 @@ maze_t::solve()
 // lee el laberinto en forma de matriz desde la entrada
 istream&
 maze_t::read(istream& is)
-{ 
+{
   int m, n;
   is >> m >> n;
   assert(m > 0 && n > 0);
-  
+
   matrix_.resize(m, n);
   visited_.resize(m, n);
-  
+
+  //Modificación
+  aux_.resize(m, n);
+
   for (int i = 1; i <= m; i++)
   {
     for (int j = 1; j <= n; j++)
     {
       short s;
       is >> s;
-      
+
       // si el dato es un START_ID -> entrada al laberinto
       if (s == START_ID)
       {
@@ -67,12 +74,15 @@ maze_t::read(istream& is)
         i_end_ = i;
         j_end_   = j;
       }
-      
+
       matrix_(i, j) = s;
+      
+      //Modificación
+      aux_(i,j) = 0;
     }
   }
 
-  // comprobamos que se han leído correctamente la entrada y la salida  
+  // comprobamos que se han leído correctamente la entrada y la salida
   assert (i_start_ != -1 && j_start_ != -1 && i_end_ != -1 && j_end_ != -1);
 
   return is;
@@ -89,7 +99,7 @@ maze_t::write(ostream& os) const
   {
     for (int j = 1; j <= matrix_.get_n(); j++)
       switch (matrix_(i, j))
-      { 
+      {
         case START_ID: os << START_CHR; break;
         case END_ID:   os << END_CHR;   break;
         case WALL_ID:  os << WALL_CHR;  break;
@@ -98,8 +108,8 @@ maze_t::write(ostream& os) const
       }
     os << endl;
   }
-  
-  return os; 
+
+  return os;
 }
 
 
@@ -108,18 +118,12 @@ maze_t::write(ostream& os) const
 // comprueba que la fila i y columna j son válidas antes de pasar a ellas
 bool
 maze_t::is_ok_(const int i, const int j) const
-{ 
+{
   // retornar true si se cumplen TODAS estas condiciones:
-  // - fila i y la columna j están dentro de los límites del laberinto,
-  // - la celda en (i, j) no puede ser un muro,
-  // - la celda (i, j) no puede haber sido visitada antes.
-  bool condicion false;
-    if (i <= 12 && j <= 12)
-        if (at(i, j) == 0)
-            if (visited_(i, j) = false)
-                condicion true;
-
-  return condicion;
+  if ((i >= 1 && i <= matrix_.get_m()) && (j >= 1 && j <= matrix_.get_n()))
+    if (matrix_(i, j) != WALL_ID)
+      if (!visited_(i, j))
+        return true;
 }
 
 
@@ -131,9 +135,9 @@ maze_t::solve_(const int i, const int j)
 {
   // CASO BASE:
   // retornar 'true' si 'i' y 'j' han llegado a la salida
-
-  // [poner código aquí]
-
+  if(matrix_(i, j) == END_ID)
+    return true;
+  
   // marcamos la celda como visitada
   visited_(i, j) = true;
   
@@ -143,12 +147,36 @@ maze_t::solve_(const int i, const int j)
   // llamando recursivamente a 'solve'. 
   // Si la llamada devuelve 'true', poner en la celda el valor PATH_ID, y
   // propagarla retornando también 'true'
+  //N
+  if(is_ok_(i-1,j) && solve_(i-1,j)){
+    matrix_(i-1,j) = PATH_ID;
+    return true;
+  }
 
-  // [poner código aquí]
+  //E
+  if(is_ok_(i,j+1) && solve_(i,j+1)){
+    matrix_(i,j+1) = PATH_ID;
+    return true;
+  }
+
+  //S
+  if(is_ok_(i+1,j) && solve_(i+1,j)){
+    matrix_(i+1,j) = PATH_ID;
+    return true;
+  }
+
+  //W
+  if(is_ok_(i,j-1) && solve_(i,j-1)){
+    matrix_(i,j-1) = PATH_ID;
+    return true;
+  }
   
   // desmarcamos la celda como visitada (denominado "backtracking") y
   // retornamos 'false'
   visited_(i, j) = false;
+  
+  //Modificación
+  aux_(i, j) = 1;
   return false;
 }
 

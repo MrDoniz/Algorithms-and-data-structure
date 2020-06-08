@@ -1,6 +1,6 @@
-// AUTOR: 
-// FECHA: 
-// EMAIL: 
+// AUTOR: Daniel Dóniz García
+// FECHA: 2 abr 2020
+// EMAIL: alu0101217277@ull.edu.es
 // VERSION: 1.0
 // ASIGNATURA: Algoritmos y Estructuras de Datos
 // PRÁCTICA Nº: 6
@@ -65,6 +65,9 @@ public:
 
   // método para resolver el laberinto y que invoca al otro método recursivo
   bool solve(void);
+  
+  //Modificación
+  int count_wall(int);
 
   istream& read(istream& = cin);
   ostream& write(ostream& = cout) const;
